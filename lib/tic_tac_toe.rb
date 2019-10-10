@@ -111,7 +111,7 @@ class TicTacToe
           nil
         end
       end
-      return nil 
+      return nil
   end
 
 end
