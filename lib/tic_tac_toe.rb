@@ -80,6 +80,19 @@ class TicTacToe
     end
   end
 
+  def full?
+    @board.all?{|occupied| occupied != " "}
+  end
+
+  def over?
+    !(won?) && (full?)
+  end
+
+
+  def draw?
+    won? || full? || draw?
+  end
+
 
 
 
