@@ -84,13 +84,20 @@ class TicTacToe
     @board.all?{|occupied| occupied != " "}
   end
 
-  def over?
-    !(won?) && (full?)
+  def draw?(array)
+    if full?(array) && !won?(array)
+      return true
+    else
+      return false
+    end
   end
 
-
-  def draw?
-    won? || full? || draw?
+  def over?(array)
+    if ( won?(array) || draw?(array) || full?(array) )
+      return true
+    else
+      return false
+    end
   end
 
   def winner
