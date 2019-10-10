@@ -110,7 +110,6 @@ class TicTacToe
         else
           nil
         end
-      end
-  end
+    end
 
 end
