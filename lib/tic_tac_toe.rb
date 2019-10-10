@@ -124,3 +124,5 @@ class TicTacToe
   end
 
 end
+
+TicTacToe.play
