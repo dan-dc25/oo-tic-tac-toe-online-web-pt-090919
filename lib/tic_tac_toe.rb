@@ -101,15 +101,22 @@ class TicTacToe
   end
 
   def winner(array)
-      WIN_COMBINATIONS.detect do |win_combo|
-        if (@board[win_combo[0]]) == "X" && (@board[win_combo[1]]) == "X" && (@board[win_combo[2]]) == "X"
-          return "X"
-        elsif (@board[win_combo[0]]) == "O" && (@board[win_combo[1]]) == "O" && (@board[win_combo[2]]) == "O"
-          return "O"
-        else
-          nil
-        end
+  if won?(array)
+    WIN_COMBINATIONS.each do |win_combination|
+      position_1 = array[win_combination[0]]
+      position_2 = array[win_combination[1]]
+      position_3 = array[win_combination[2]]
+      if (position_1 == "X" && position_2 == "X" && position_3 == "X")
+        return "X"
+      elsif (position_1 == "O" && position_2 == "O" && position_3 == "O")
+        return "O"
+      else
+        # do nothing
+      end
     end
-
+  else
+    return nil
+  end
+end
 
 end
